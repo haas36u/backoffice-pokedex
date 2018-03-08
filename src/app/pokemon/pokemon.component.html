@@ -6,8 +6,8 @@
         <div class="col s12">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#!" class="breadcrumb">Dashboard</a>
-                    <a href="#!" class="breadcrumb">Pokemon</a>
+                    <a routerLink="/" class="breadcrumb">Dashboard</a>
+                    <a class="breadcrumb">Pokemon</a>
                 </div>
             </nav>
 		</div>
@@ -18,9 +18,10 @@
             <thead>
                 <tr>
 					<th style="width: 100px;">Image</th>
-					<th style="width: 18%;">Slug</th>
-                    <th style="width: 18%;">Nom</th>
-                    <th style="width: 10%;">Niveau</th>
+					<th>Slug</th>
+                    <th>Nom</th>
+                    <th>Niveau</th>
+                    <th>Types</th>
                     <th></th>
                 </tr>
             </thead>
@@ -34,6 +35,7 @@
 						<td>{{pokemon.slug}}</td>
                         <td>{{pokemon.name}}</td>
                         <td>{{pokemon.level}}</td>
+                        <td><span class="badge" [ngStyle]="{'background-color': type.color}" *ngFor="let type of pokemon.types">{{type.name}}</span></td>
                         <td>
                             <a routerLink="/pokemons/{{pokemon.slug}}">Modifier <i class="material-icons">mode_edit</i></a>
                             |

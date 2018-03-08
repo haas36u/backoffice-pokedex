@@ -4,8 +4,8 @@
         <div class="col s12">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#!" class="breadcrumb">Dashboard</a>
-					<a href="#!" class="breadcrumb">Pokemon</a>
+					<a routerLink="/" class="breadcrumb">Dashboard</a>
+					<a routerLink="/pokemons" class="breadcrumb">Pokemon</a>
 					<a class="breadcrumb">Edit</a>
                 </div>
             </nav>
@@ -22,6 +22,13 @@
 					</div>
 					<div class="input-field col s6">
 						<input placeholder="Level" id="level" name="level" type="number" class="validate" value="{{pokemon.level}}" [(ngModel)]="pokemon.level">
+					</div>
+					<div class="col s12">
+						<p>Types</p>
+						<div *ngFor="let type of types">
+							<input type="checkbox" class="filled-in" id="{{type.slug}}" (change)="onTypeChange(type,$event)"/>
+							<label for="{{type.slug}}">{{type.name}}</label>
+						</div>
 					</div>
 				</div>
 				<div class="btn" (click)="updatePokemon()">Enregistrer</div>

@@ -9,4 +9,11 @@ main nav {
 .page-header {
   font-size: 3em; }
 
+table a {
+  cursor: pointer; }
+
+span.badge {
+  color: #ffffff !important;
+  float: none !important; }
+
 /*# sourceMappingURL=base.css.map */
