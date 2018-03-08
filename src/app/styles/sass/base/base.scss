@@ -1,13 +1,16 @@
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+main nav {
+    background-color: transparent !important;
+    box-shadow: none;
+
+    a.breadcrumb:last-child {
+        color: #000000;
+    }
+
+    a.breadcrumb, a.breadcrumb:before {
+        color: #9a9a9a;
+    }
 }
 
-main {
-    flex: 1 0 auto;
-}
-
-.badge {
-    color: #ffffff !important;
+.page-header{
+    font-size: 3em;
 }

@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col s12">
+        <h1 class="page-header">Pokemon
+            <div class="btn" routerLink="/types/new">Ajouter un pokemon</div>
+        </h1>
+        <div class="col s12">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="breadcrumb">Dashboard</a>
+                    <a href="#!" class="breadcrumb">Pokemon</a>
+                </div>
+            </nav>
+		</div>
+		
+        <p class="right">{{pokemons.length}} éléments</p>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+					<th style="width: 100px;">Image</th>
+					<th style="width: 18%;">Slug</th>
+                    <th style="width: 18%;">Nom</th>
+                    <th style="width: 10%;">Niveau</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                    <tr *ngFor="let pokemon of pokemons">
+						<td>
+							<div class="little_img" [ngStyle]="{'background-image': 'url(' + pokemon.img + ')'}" style="height: 100px; background-size: cover;">
+							</div>
+						</td>
+						<td>{{pokemon.slug}}</td>
+                        <td>{{pokemon.name}}</td>
+                        <td>{{pokemon.level}}</td>
+                        <td>
+                            <a routerLink="/pokemon/{{pokemon.slug}}">Modifier <i class="material-icons">mode_edit</i></a>
+                            |
+                            <a (click)="delete(pokemon)">Supprimer <i class="material-icons">delete</i></a>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

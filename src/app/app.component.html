@@ -29,14 +29,17 @@
                     <a href=""><i class="left material-icons">insert_chart</i> Dashboard</a>
                 </li>
                 <li class="col s12">
-                    <a href=""><i class="left material-icons">insert_chart</i> Types</a>
+                    <a routerLink="/types"><i class="left material-icons">insert_chart</i> Types</a>
+                </li>
+                <li class="col s12">
+                    <a routerLink="/pokemons"><i class="left material-icons">insert_chart</i> Pokemons</a>
                 </li>
             </ul>
         </nav>
 
-        <div class="col s9">
+        <main class="col s9">
 			<router-outlet></router-outlet>
-        </div>
+        </main>
     </div>
 </body>
 </html>

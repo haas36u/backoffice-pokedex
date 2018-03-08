@@ -8,13 +8,16 @@ import { TypeComponent } from './type/type.component';
 import { AppRoutingModule } from './/app-routing.module';
 
 import { TypeService } from './services/type.service';
-import { TypeEditComponent } from './type-edit/type-edit.component'; 
+import { TypeEditComponent } from './type-edit/type-edit.component';
+import { PokemonComponent } from './pokemon/pokemon.component'; 
+import { PokemonService } from './services/pokemon.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     TypeComponent,
-    TypeEditComponent
+    TypeEditComponent,
+    PokemonComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ import { TypeEditComponent } from './type-edit/type-edit.component';
   ],
   providers: [
     TypeService, 
+    PokemonService,
     HttpClientModule
   ],
   bootstrap: [AppComponent]
