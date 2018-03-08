@@ -22,6 +22,17 @@ export class TypeService {
 		return this.http.get<Type>(url);
 	}
 
+	addType (type: Type): Observable<Type> {
+		return this.http.post<Type>(this.typeUrl, type, this.httpOptions);
+	}
+
+	updateType (type: Type): Observable<any> {
+		const url = `${this.typeUrl}/${type.slug}`;
+		console.log(url)
+		console.log(type)
+		return this.http.put(url, type, this.httpOptions);
+	}
+
 	deleteType (type: Type | number): Observable<Type> {
 		const slug = typeof type === 'number' ? type : type.slug;
 		const url = `${this.typeUrl}/${slug}`;
