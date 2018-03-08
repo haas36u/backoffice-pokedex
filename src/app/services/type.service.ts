@@ -28,8 +28,6 @@ export class TypeService {
 
 	updateType (type: Type): Observable<any> {
 		const url = `${this.typeUrl}/${type.slug}`;
-		console.log(url)
-		console.log(type)
 		return this.http.put(url, type, this.httpOptions);
 	}
 

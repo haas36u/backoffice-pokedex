@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col s12">
         <h1 class="page-header">Pokemon
-            <div class="btn" routerLink="/types/new">Ajouter un pokemon</div>
+            <div class="btn" routerLink="/pokemons/new">Ajouter un pokemon</div>
         </h1>
         <div class="col s12">
             <nav>
@@ -35,7 +35,7 @@
                         <td>{{pokemon.name}}</td>
                         <td>{{pokemon.level}}</td>
                         <td>
-                            <a routerLink="/pokemon/{{pokemon.slug}}">Modifier <i class="material-icons">mode_edit</i></a>
+                            <a routerLink="/pokemons/{{pokemon.slug}}">Modifier <i class="material-icons">mode_edit</i></a>
                             |
                             <a (click)="delete(pokemon)">Supprimer <i class="material-icons">delete</i></a>
                         </td>

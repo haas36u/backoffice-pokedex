@@ -10,6 +10,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { TypeService } from './services/type.service';
 import { TypeEditComponent } from './type-edit/type-edit.component';
 import { PokemonComponent } from './pokemon/pokemon.component'; 
+import { PokemonEditComponent } from './pokemon-edit/pokemon-edit.component';
 import { PokemonService } from './services/pokemon.service';
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PokemonService } from './services/pokemon.service';
     AppComponent,
     TypeComponent,
     TypeEditComponent,
-    PokemonComponent
+    PokemonComponent,
+    PokemonEditComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 export class Pokemon {
-    id: number;
+    _id: number;
     name: string;
     slug: string;
     level: number;

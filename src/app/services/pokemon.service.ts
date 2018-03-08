@@ -21,4 +21,20 @@ export class PokemonService {
 		const url = `${this.pokemonsUrl}/${slug}`;
 		return this.http.get<Pokemon>(url);
 	}
+
+	addPokemon (type: Pokemon): Observable<Pokemon> {
+		return this.http.post<Pokemon>(this.pokemonsUrl, type, this.httpOptions);
+	}
+
+	updatePokemon (type: Pokemon): Observable<any> {
+		const url = `${this.pokemonsUrl}/${type.slug}`;
+		return this.http.put(url, type, this.httpOptions);
+	}
+
+	deletePokemon (type: Pokemon | number): Observable<Pokemon> {
+		const slug = typeof type === 'number' ? type : type.slug;
+		const url = `${this.pokemonsUrl}/${slug}`;
+  
+		return this.http.delete<Pokemon>(url, this.httpOptions);
+	}
 }

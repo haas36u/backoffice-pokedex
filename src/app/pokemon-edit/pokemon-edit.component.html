@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col s12">
+        <h1 class="page-header">Edit un pokemon</h1>
+        <div class="col s12">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="breadcrumb">Dashboard</a>
+					<a href="#!" class="breadcrumb">Pokemon</a>
+					<a class="breadcrumb">Edit</a>
+                </div>
+            </nav>
+		</div>
+
+		<div class="row" *ngIf="pokemon">
+			<form class="col s12">
+				<div class="row">
+					<div class="input-field col s6">
+						<input placeholder="Image url" id="image" name="image" type="text" class="validate" value="{{pokemon.img}}" [(ngModel)]="pokemon.img">
+					</div>
+					<div class="input-field col s6">
+						<input placeholder="Nom" id="name" name="name" type="text" class="validate" value="{{pokemon.name}}" [(ngModel)]="pokemon.name">
+					</div>
+					<div class="input-field col s6">
+						<input placeholder="Level" id="level" name="level" type="number" class="validate" value="{{pokemon.level}}" [(ngModel)]="pokemon.level">
+					</div>
+				</div>
+				<div class="btn" (click)="updatePokemon()">Enregistrer</div>
+			</form>
+		</div>
+    </div>
+</div>

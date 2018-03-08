@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col s12">
-        <h1 class="page-header">Edit a type</h1>
+        <h1 class="page-header">Edit un type</h1>
         <div class="col s12">
             <nav>
                 <div class="nav-wrapper">
@@ -15,10 +15,10 @@
 			<form class="col s12">
 				<div class="row">
 					<div class="input-field col s6">
-						<input placeholder="Name" id="name" name="name" type="text" class="validate" value="{{type.name}}" [(ngModel)]="type.name">
+						<input placeholder="Nom" id="name" name="name" type="text" class="validate" value="{{type.name}}" [(ngModel)]="type.name">
 					</div>
 					<div class="input-field col s6">
-						<input placeholder="Color" id="color" name="color" type="text" class="validate" value="{{type.color}}" [(ngModel)]="type.color">
+						<input placeholder="Couleur" id="color" name="color" type="text" class="validate" value="{{type.color}}" [(ngModel)]="type.color">
 					</div>
 				</div>
 				<div class="btn" (click)="updateType()">Enregistrer</div>
