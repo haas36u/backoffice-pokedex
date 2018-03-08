@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col s12">
+        <h1 class="page-header">Types
+            <div class="btn">Ajouter un type</div>
+        </h1>
+        <div class="col s12">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="breadcrumb">Dashboard</a>
+                    <a href="#!" class="breadcrumb">Types</a>
+                </div>
+            </nav>
+        </div>
+
+        <p class="right">{{types.length}} éléments</p>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+					<th style="width: 18%;">Slug</th>
+                    <th style="width: 18%;">Nom</th>
+                    <th style="width: 15%;">Couleur</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                    <tr *ngFor="let type of types">
+						<td>{{type.slug}}</td>
+                        <td>{{type.name}}</td>
+                        <td>{{type.color}} <div [ngStyle]="{'background-color': type.color}" style="width: 10px; height: 10px; display: inline-block;"></div></td>
+                        <td>
+                           <a href="#">Modifier <i class="material-icons">mode_edit</i></a>
+                            |
+                            <span class="panel-red">
+                                <a (click)="delete(type)">Supprimer <i class="material-icons">delete</i></a>
+							</span>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+header {
+  height: 5em; }
+  header nav {
+    background-color: transparent;
+    margin: auto; }
+    header nav ul {
+      list-style-type: none; }
+  header a {
+    color: #f1f1f1; }
+    header a:hover {
+      color: #ffffff; }
+  header img {
+    width: 150px;
+    height: auto; }
+
+header, footer {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: #24292e !important;
+  color: #f1f1f1; }
+
+/*# sourceMappingURL=header.css.map */
