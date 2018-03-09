@@ -18,7 +18,8 @@
 						<input placeholder="Nom" id="name" name="name" type="text" class="validate" value="{{type.name}}" [(ngModel)]="type.name">
 					</div>
 					<div class="input-field col s6">
-						<input placeholder="Couleur" id="color" name="color" type="text" class="validate" value="{{type.color}}" [(ngModel)]="type.color">
+						<span>Couleur : </span>
+						<input id="color" name="color" type="color" class="validate" value="{{type.color}}" [(ngModel)]="type.color">
 					</div>
 				</div>
 				<div class="btn" (click)="updateType()">Enregistrer</div>
