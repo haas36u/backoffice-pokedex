@@ -7,5 +7,5 @@ export class Pokemon {
     level: number;
     img: string;
     types: string[];
-    evolutions: Pokemon[]
+    evolutions: any[]
 }

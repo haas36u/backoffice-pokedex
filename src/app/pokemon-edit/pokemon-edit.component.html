@@ -30,6 +30,13 @@
 							<label for="{{type.slug}}">{{type.name}}</label>
 						</div>
 					</div>
+					<div class="col s12">
+						<p>Evolutions</p>
+						<div *ngFor="let pokemon of pokemons">
+							<input type="checkbox" class="filled-in" id="{{pokemon.slug}}" (change)="onPokemonChange(pokemon,$event)"/>
+							<label for="{{pokemon.slug}}">{{pokemon.name}}</label>
+						</div>
+					</div>
 				</div>
 				<div class="btn" (click)="updatePokemon()">Enregistrer</div>
 			</form>

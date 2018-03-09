@@ -25,9 +25,11 @@ export class PokemonEditComponent implements OnInit {
   	ngOnInit() {
 		this.getPokemon();
 		this.getTypes();
+		this.getPokemons();
 	  }
 	  
 	types: Type[];
+	pokemons: Pokemon[];
 
 	getPokemon(): void{
 		const slug = this.route.snapshot.paramMap.get('slug');
@@ -40,6 +42,14 @@ export class PokemonEditComponent implements OnInit {
 	getTypes(): void {
 		this.typeService.getTypes()
 		.subscribe(types => this.types = types);
+	}
+
+	getPokemons(): void {
+		this.pokemonService.getPokemons()
+		.subscribe(pokemons => {
+			pokemons = pokemons.filter(pokemon => pokemon.slug != this.pokemon.slug)
+			this.pokemons = pokemons;
+		});
 	}
 	
 	goBack() : void {
@@ -55,7 +65,6 @@ export class PokemonEditComponent implements OnInit {
 	}
 
 	onTypeChange(type: Type): void {
-		console.log(this.pokemon)
 		if (typeof this.pokemon.types == 'undefined') this.pokemon.types = [];
 		let nbTypes = this.pokemon.types.length;
 
@@ -72,8 +81,30 @@ export class PokemonEditComponent implements OnInit {
 		if (nbTypes == 0) { 
 			this.pokemon.types.push(type.slug);
 		}
+	}
 
-		console.log(this.pokemon.types)
+	onPokemonChange(pokemon: Pokemon): void {
+		if (typeof this.pokemon.evolutions == 'undefined') this.pokemon.evolutions = [];
+		let nbEvolution = this.pokemon.evolutions.length;
+
+		for (let i = 0; i < nbEvolution; i++) {
+			if (this.pokemon.evolutions[i].slug == pokemon.slug) {
+				this.pokemon.evolutions.splice(i, 1);
+			} else if(i == nbEvolution -1){
+				const evoPoke = {
+					slug: pokemon.slug
+				}
+				this.pokemon.evolutions.push(evoPoke);
+				break;
+			}
+		}
+
+		if (nbEvolution == 0) { 
+			const evoPoke = {
+				slug: pokemon.slug
+			}
+			this.pokemon.evolutions.push(evoPoke);
+		}
 	}
 }
 
