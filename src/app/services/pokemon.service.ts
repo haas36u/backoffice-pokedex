@@ -22,17 +22,17 @@ export class PokemonService {
 		return this.http.get<Pokemon>(url);
 	}
 
-	addPokemon (type: Pokemon): Observable<Pokemon> {
-		return this.http.post<Pokemon>(this.pokemonsUrl, type, this.httpOptions);
+	addPokemon (pokemon: Pokemon): Observable<Pokemon> {
+		return this.http.post<Pokemon>(this.pokemonsUrl, pokemon, this.httpOptions);
 	}
 
-	updatePokemon (type: Pokemon): Observable<any> {
-		const url = `${this.pokemonsUrl}/${type.slug}`;
-		return this.http.put(url, type, this.httpOptions);
+	updatePokemon (pokemon: Pokemon): Observable<any> {
+		const url = `${this.pokemonsUrl}/${pokemon.slug}`;
+		return this.http.put(url, pokemon, this.httpOptions);
 	}
 
-	deletePokemon (type: Pokemon | number): Observable<Pokemon> {
-		const slug = typeof type === 'number' ? type : type.slug;
+	deletePokemon (pokemon: Pokemon | number): Observable<Pokemon> {
+		const slug = typeof pokemon === 'number' ? pokemon : pokemon.slug;
 		const url = `${this.pokemonsUrl}/${slug}`;
   
 		return this.http.delete<Pokemon>(url, this.httpOptions);

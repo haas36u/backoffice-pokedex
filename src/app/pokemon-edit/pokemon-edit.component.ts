@@ -47,7 +47,6 @@ export class PokemonEditComponent implements OnInit {
 	}
 	
 	updatePokemon(): void {
-		console.log(this.pokemon)
 		if (typeof this.pokemon._id !== 'undefined') {
 			this.pokemonService.updatePokemon(this.pokemon).subscribe(() => this.goBack());
 		} else {
