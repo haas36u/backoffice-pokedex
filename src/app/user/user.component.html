@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col s12">
+        <h1 class="page-header">Users
+        </h1>
+        <div class="col s12">
+            <nav>
+                <div class="nav-wrapper">
+                    <a routerLink="/" class="breadcrumb">Dashboard</a>
+                    <a class="breadcrumb">User</a>
+                </div>
+            </nav>
+        </div>
+
+        <p class="right">{{users.length}} éléments</p>
+
+        <div class="col s12">
+          <p><strong>Pseudo</strong></p>
+          <ul *ngFor="let user of users">
+            <li>{{user.username}}</li>
+          </ul>
+        </div>
+    </div>
+</div>

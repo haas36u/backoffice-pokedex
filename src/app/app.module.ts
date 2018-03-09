@@ -12,6 +12,8 @@ import { TypeEditComponent } from './type-edit/type-edit.component';
 import { PokemonComponent } from './pokemon/pokemon.component'; 
 import { PokemonEditComponent } from './pokemon-edit/pokemon-edit.component';
 import { PokemonService } from './services/pokemon.service';
+import { UserComponent } from './user/user.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { PokemonService } from './services/pokemon.service';
     TypeComponent,
     TypeEditComponent,
     PokemonComponent,
-    PokemonEditComponent
+    PokemonEditComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { PokemonService } from './services/pokemon.service';
   providers: [
     TypeService, 
     PokemonService,
-    HttpClientModule
+    HttpClientModule,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

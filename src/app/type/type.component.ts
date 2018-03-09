@@ -23,8 +23,11 @@ export class TypeComponent implements OnInit {
   }
   
   delete(type: Type): void {
-    this.types = this.types.filter(h => h !== type);
-    this.typeService.deleteType(type).subscribe();
+    var ok = confirm("Voulez-vous supprimer le type : "+ type.name);
+		if (ok == true) {
+      this.types = this.types.filter(h => h !== type);
+      this.typeService.deleteType(type).subscribe();
+    }
   }
 
 }
